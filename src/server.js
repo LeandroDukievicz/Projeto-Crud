@@ -1,8 +1,6 @@
 
 const express = require('express')
 const path = require('path')
-const mongoose = require('mongoose')
-
 
 const db = require('./database')
 const routes = require('./routes')
@@ -11,6 +9,17 @@ const app = express()
 
 // conectando banco de dados 
 db.connect()
+
+
+
+//const register = new Model({
+  //  name: 'Leandro Dukievicz',
+    //age: 36,
+    //email:'leandrodukievicz1718@hotmail.com',
+    //password:'1718'
+//})
+
+//register.save()
 
 //Definindo o template engine
 app.set('view engine', 'ejs')

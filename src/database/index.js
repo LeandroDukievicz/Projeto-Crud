@@ -5,7 +5,8 @@ const mongoose = require('mongoose')
 //mongoose.set('useUnifiedTopology', true)
 
 function connect() {
-    mongoose.connect('mongodb://localhost:27017/')
+    mongoose.connect('mongodb://localhost:27017/projeto1')
+    
     const db = mongoose.connection
 
     db.once('open', () => {
