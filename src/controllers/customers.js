@@ -1,6 +1,7 @@
 const CustommersModel = require('../models/customers')
+const {crypto} = require('../utils/password')
 
-function add(req, res) {
+async function add(req, res) {
     const  {
         name,
         age,
@@ -8,11 +9,14 @@ function add(req, res) {
         password,
     } = req.body
 
+    const passwordCrypto = await crypto(password)
+
+
     const register = new CustommersModel({
         name,
         age,
         email,
-        password,
+        password: passwordCrypto,
     })
     register.save()
     res.send('Cadastro Realizado')
