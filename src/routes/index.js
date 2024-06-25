@@ -16,6 +16,6 @@ router.get('/list', CustomersController.list)
 
 //editar 
 router.get('/edit', CustomersController.formEdit)
-//router.post('/edit', CustomersController.edit)
+router.post('/edit/:id', CustomersController.edit)
 
 module.exports = router
