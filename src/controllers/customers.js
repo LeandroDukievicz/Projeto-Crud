@@ -1,11 +1,11 @@
-const CustommersModel = require('../models/customers')
-const {crypto} = require('../utils/password')
+const CustomersModel = require('../models/customers')
+const { crypto } = require('../utils/password')
 
 const defaultTitle = 'Cadastro de Clientes'
 const listTitle = 'Listagem de Usuários'
 
 function index(req, res) {
-    res.render('register',{
+    res.render('register', {
         title: defaultTitle
     })
 }
@@ -33,6 +33,7 @@ async function add(req, res) {
         title:defaultTitle,
         message: 'Cadastro realizado com Sucesso !'
     })
+}
 
 async function list(req, res) {
     const users = await CustomersModel.find()
@@ -44,8 +45,8 @@ async function list(req, res) {
 }
 
 
-module.exports = { 
+module.exports = {
     index,
-    add,
-    list,
-}
+     add, 
+     list,
+    }
