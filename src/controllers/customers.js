@@ -44,9 +44,16 @@ async function list(req, res) {
     })
 }
 
+function formEdit(req, res) {
+    res.render('edit', {
+        title: 'Editar Usuário'
+    })
+}
+
 
 module.exports = {
     index,
      add, 
      list,
+     formEdit,
     }
